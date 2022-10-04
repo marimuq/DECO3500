@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quokka_app/custom_theme.dart';
 
 void main() {
   runApp(const Quokka());
@@ -18,6 +19,7 @@ class _QuokkaState extends State<Quokka> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Quokka',
+      theme: CustomTheme.lightTheme,
       home: Builder(
         builder: (context) => Scaffold(
           appBar: AppBar(
