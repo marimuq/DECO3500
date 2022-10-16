@@ -83,6 +83,34 @@ class TripBoard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             ElevatedButton(
+              child: Text('Destinations'),
+              onPressed: () {
+                Text('pressed');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Destinations()),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: Text('Dates'),
+              onPressed: () {
+                Text('pressed');
+              },
+            ),
+            ElevatedButton(
+              child: Text('Flights'),
+              onPressed: () {
+                Text('pressed');
+              },
+            ),
+            ElevatedButton(
+              child: Text('Accomodation'),
+              onPressed: () {
+                Text('pressed');
+              },
+            ),
+            ElevatedButton(
               child: Text('Activities'),
               onPressed: () {
                 Text('pressed');
@@ -94,6 +122,151 @@ class TripBoard extends StatelessWidget {
             ),
           ],
         ));
+  }
+}
+
+class Destinations extends StatelessWidget {
+  const Destinations({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Destinations'),
+      ),
+      body: Center(
+        child: ListView(
+          padding: const EdgeInsets.all(8),
+          children: <Widget>[
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                    "Swipe and prioritise with the destination card! Rate and/ or reject destinations. \nIf you are unsure, click on the image to browse events and activities!"),
+              ],
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.arrow_drop_down_circle),
+                    title: const Text('Gold Coast'),
+                    subtitle: Text(
+                      'Queensland, Australia',
+                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      'Image here',
+                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    ),
+                  ),
+                  ButtonBar(
+                    alignment: MainAxisAlignment.start,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          // Perform some action
+                        },
+                        child: const Text('Rate'),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.thumb_down),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                  //Image.asset('assets/card-sample-image.jpg'),
+                  //Image.asset('assets/card-sample-image-2.jpg'),
+                ],
+              ),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.arrow_drop_down_circle),
+                    title: const Text('Melbourne'),
+                    subtitle: Text(
+                      'Victoria, Australia',
+                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      'Image here',
+                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    ),
+                  ),
+                  ButtonBar(
+                    alignment: MainAxisAlignment.start,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          // Perform some action
+                        },
+                        child: const Text('Rate'),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.thumb_down),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                  //Image.asset('assets/card-sample-image.jpg'),
+                  //Image.asset('assets/card-sample-image-2.jpg'),
+                ],
+              ),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.arrow_drop_down_circle),
+                    title: const Text('Brisbane'),
+                    subtitle: Text(
+                      'Queensland, Australia',
+                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      'Image here',
+                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    ),
+                  ),
+                  ButtonBar(
+                    alignment: MainAxisAlignment.start,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          // Perform some action
+                        },
+                        child: const Text('Rate'),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.thumb_down),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                  //Image.asset('assets/card-sample-image.jpg'),
+                  //Image.asset('assets/card-sample-image-2.jpg'),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
