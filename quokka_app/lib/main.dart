@@ -12,7 +12,7 @@ class Quokka extends StatefulWidget {
 }
 
 class _QuokkaState extends State<Quokka> {
-  Widget mainWidget = Profile();
+  Widget mainWidget = Start();
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +28,10 @@ class _QuokkaState extends State<Quokka> {
               padding: EdgeInsets.zero,
               children: <Widget>[
                 ListTile(
-                  title: Text('My Profile'),
+                  title: Text('Getting Started'),
                   onTap: () {
                     setState(() {
-                      mainWidget = Profile();
+                      mainWidget = Start();
                     });
                     Navigator.pop(context);
                   },
@@ -55,11 +55,46 @@ class _QuokkaState extends State<Quokka> {
   }
 }
 
-class Profile extends StatelessWidget {
+class Start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text('My Profile'),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Text(
+            'Get started and set up your ground trip! Ideate and share ideas with your group.\n\n\n Trip Board Name'),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextFormField(
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Enter a name',
+            ),
+          ),
+        ),
+        Text(
+            "Add one or more destinations to your trip board to present to your group!"),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Enter a destination',
+            ),
+          ),
+        ),
+        Text("Add dates to your trip board to present to your group!"),
+        Text("Invite your members to share and vote in your trip board"),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Enter a destination',
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -262,6 +297,16 @@ class Destinations extends StatelessWidget {
                   //Image.asset('assets/card-sample-image-2.jpg'),
                 ],
               ),
+            ),
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    // Perform some action
+                  },
+                  child: const Text('Add New Destinations'),
+                ),
+              ],
             ),
           ],
         ),
