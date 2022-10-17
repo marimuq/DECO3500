@@ -90,9 +90,19 @@ class Start extends StatelessWidget {
           child: TextField(
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'Enter a destination',
+              hintText: 'Enter an email address',
             ),
           ),
+        ),
+        ElevatedButton(
+          child: Text('Next'),
+          onPressed: () {
+            Text('pressed');
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Congratulations()),
+            );
+          },
         ),
       ],
     );
@@ -301,13 +311,56 @@ class Destinations extends StatelessWidget {
             Row(
               children: [
                 ElevatedButton(
+                  child: Text('Add New Destinations'),
                   onPressed: () {
-                    // Perform some action
+                    Text('pressed');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DestinationSearch()),
+                    );
                   },
-                  child: const Text('Add New Destinations'),
                 ),
               ],
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Congratulations extends StatelessWidget {
+  const Congratulations({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Activities'),
+      ),
+      body: Center(
+        child: ListView(
+          padding: const EdgeInsets.all(8),
+          children: <Widget>[
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text("Congratulations! You've just made your ground trip."),
+                SizedBox(width: 10),
+                ElevatedButton(
+                  child: Text('Next'),
+                  onPressed: () {
+                    Text('pressed');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TripBoard()),
+                    );
+                  },
+                ),
+              ],
+            )
           ],
         ),
       ),
@@ -345,5 +398,28 @@ class Activities extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class DestinationSearch extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+      child: ListView(
+        children: <Widget>[
+          const Text('Search for your dream destination'),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Enter a destination',
+              ),
+            ),
+          ),
+        ],
+      ),
+    ));
   }
 }
