@@ -72,64 +72,54 @@ class _QuokkaState extends State<Quokka> {
 class Start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Center(
-                child: SingleChildScrollView(
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                  const Text(
-                      ' Get started and set up your ground trip! \n Ideate and share ideas with your group.\n\n\n Trip Board Name'),
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                        border: UnderlineInputBorder(),
-                        labelText: 'Enter a name',
-                      ),
-                    ),
-                  ),
-                  Text(
-                      " Add a destination to your trip board to present to your group!"),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'Enter a destination',
-                      ),
-                    ),
-                  ),
-                  Text(
-                      " Add dates to your trip board to present to your group!"),
-                  SfDateRangePicker(),
-                  Text(
-                      " Invite your members to share and vote in your trip board"),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'Enter an email address',
-                      ),
-                    ),
-                  ),
-                  ElevatedButton(
-                    child: Text('Next'),
-                    onPressed: () {
-                      Text('pressed');
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Congratulations()),
-                      );
-                    },
-                  ),
-                ])))));
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Text(
+            ' Get started and set up your ground trip! \n Ideate and share ideas with your group.\n\n\n Trip Board Name'),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextFormField(
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Enter a name',
+            ),
+          ),
+        ),
+        Text(" Add a destination to your trip board to present to your group!"),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Enter a destination',
+            ),
+          ),
+        ),
+        Text(" Add dates to your trip board to present to your group!"),
+        SfDateRangePicker(),
+        Text(" Invite your members to share and vote in your trip board"),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Enter an email address',
+            ),
+          ),
+        ),
+        ElevatedButton(
+          child: Text('Next'),
+          onPressed: () {
+            Text('pressed');
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Congratulations()),
+            );
+          },
+        ),
+      ],
+    );
   }
 }
 
