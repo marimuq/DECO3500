@@ -45,6 +45,15 @@ class _QuokkaState extends State<Quokka> {
                     });
                     Navigator.pop(context);
                   },
+                ),
+                ListTile(
+                  title: Text('Settings'),
+                  onTap: () {
+                    setState(() {
+                      mainWidget = Settings();
+                    });
+                    Navigator.pop(context);
+                  },
                 )
               ],
             ),
@@ -73,8 +82,7 @@ class Start extends StatelessWidget {
             ),
           ),
         ),
-        Text(
-            " Add one or more destinations to your trip board to present to your group!"),
+        Text(" Add a destination to your trip board to present to your group!"),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextField(
@@ -324,6 +332,134 @@ class Destinations extends StatelessWidget {
                   },
                 ),
               ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Settings extends StatelessWidget {
+  const Settings({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Trip Board Settings'),
+      ),
+      body: Center(
+        child: ListView(
+          padding: const EdgeInsets.all(8),
+          children: <Widget>[
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.arrow_drop_down_circle),
+                    title: const Text('Destinations'),
+                  ),
+                  ButtonBar(
+                    alignment: MainAxisAlignment.start,
+                    children: [
+                      Text('Nominating'),
+                      IconButton(
+                        icon: const Icon(Icons.calendar_month_outlined),
+                        onPressed: () {},
+                      ),
+                      Text('Voting'),
+                      IconButton(
+                        icon: const Icon(Icons.calendar_month_outlined),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.arrow_drop_down_circle),
+                    title: const Text('Dates'),
+                  ),
+                  ButtonBar(
+                    alignment: MainAxisAlignment.start,
+                    children: [
+                      Text('Nominating'),
+                      IconButton(
+                        icon: const Icon(Icons.calendar_month_outlined),
+                        onPressed: () {},
+                      ),
+                      Text('Voting'),
+                      IconButton(
+                        icon: const Icon(Icons.calendar_month_outlined),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.arrow_drop_down_circle),
+                    title: const Text('Flights'),
+                  ),
+                  ButtonBar(
+                    alignment: MainAxisAlignment.start,
+                    children: [
+                      Text('Nominating'),
+                      IconButton(
+                        icon: const Icon(Icons.calendar_month_outlined),
+                        onPressed: () {},
+                      ),
+                      Text('Voting'),
+                      IconButton(
+                        icon: const Icon(Icons.calendar_month_outlined),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.arrow_drop_down_circle),
+                    title: const Text('Accomodation'),
+                  ),
+                  ButtonBar(
+                    alignment: MainAxisAlignment.start,
+                    children: [
+                      Text('Nominating'),
+                      IconButton(
+                        icon: const Icon(Icons.calendar_month_outlined),
+                        onPressed: () {},
+                      ),
+                      Text('Voting'),
+                      IconButton(
+                        icon: const Icon(Icons.calendar_month_outlined),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
