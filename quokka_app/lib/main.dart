@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 void main() {
   runApp(const Quokka());
@@ -62,7 +63,7 @@ class Start extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const Text(
-            'Get started and set up your ground trip! Ideate and share ideas with your group.\n\n\n Trip Board Name'),
+            ' Get started and set up your ground trip! \n Ideate and share ideas with your group.\n\n\n Trip Board Name'),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextFormField(
@@ -73,7 +74,7 @@ class Start extends StatelessWidget {
           ),
         ),
         Text(
-            "Add one or more destinations to your trip board to present to your group!"),
+            " Add one or more destinations to your trip board to present to your group!"),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextField(
@@ -83,8 +84,9 @@ class Start extends StatelessWidget {
             ),
           ),
         ),
-        Text("Add dates to your trip board to present to your group!"),
-        Text("Invite your members to share and vote in your trip board"),
+        Text(" Add dates to your trip board to present to your group!"),
+        SfDateRangePicker(),
+        Text(" Invite your members to share and vote in your trip board"),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextField(
